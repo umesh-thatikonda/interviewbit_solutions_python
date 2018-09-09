@@ -1,0 +1,25 @@
+class Solution:
+    # @param arrive : list of integers
+    # @param depart : list of integers
+    # @param K : integer
+    # @return a boolean
+    def hotel(self, arrive, depart, K):
+        c=0
+        arrive.sort()
+        depart.sort()
+        count=0
+        i=0
+        j=0
+        while(i<len(arrive) and j<len(arrive) and ):
+            if(arrive[i]<depart[j]):
+                count+=1
+                i+=1
+            else:
+                count-=1
+                j+=1
+        if(count<=K):
+            return 1
+        else:
+            
+            return 0
+            
