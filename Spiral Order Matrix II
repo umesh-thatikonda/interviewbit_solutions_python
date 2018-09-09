@@ -1,0 +1,40 @@
+class Solution:
+    # @param A : integer
+    # @return a list of list of integers
+    def generateMatrix(self, A):
+        a=[]
+        for i in range(A):
+            a.append([0]*A)
+        c=1
+        for i in range(A):
+            for j in range(i,A):
+                a[i][j]=c
+                c+=1
+                if(c>(A**2)):
+                    break
+            if(c>A**2):
+                break
+            for k in range(i+1,A-1):
+                a[k][A-i-1]=c
+                c+=1
+                if(c>(A**2)):
+                    break
+            if(c>A**2):
+                break
+            for l in list(range(A))[::-1]:
+                a[A-1-i][l]=c
+                c+=1
+                if(c>(A**2)):
+                    break
+            if(c>A**2):
+                break
+            for m in reversed(list(range(i+1,A-1))):
+                a[m][i]=c
+                c+=1
+                if(c>(A**2)):
+                    break
+            if(c>A**2):
+                break
+        return a
+        
+                
