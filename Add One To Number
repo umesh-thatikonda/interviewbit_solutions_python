@@ -1,0 +1,23 @@
+class Solution:
+    
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+        
+        carry=1
+        for i in range(len(A)):
+            A[len(A)-i-1]+=carry
+            k=A[len(A)-i-1]
+            A[len(A)-i-1]=k%10
+            carry=k//10
+        if(carry==1):
+            A=[1]+A
+              
+       # r=[]
+        j=0
+        for i in range(len(A)):
+            if A[i]!=0:
+                break
+            else:
+                j+=1
+        return A[j::]
