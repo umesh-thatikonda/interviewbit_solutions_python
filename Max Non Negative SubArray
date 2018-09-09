@@ -1,0 +1,49 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def maxset(self, A):
+        max=0
+        initial=0
+        final=0
+        ##r[2]=0
+        ans=[]
+        c_sum=0
+        f_sum=0
+        initial=0
+        final=0
+        b=[]
+        for i in range(len(A)):
+            if(A[i]>=0):
+                c_sum+=A[i]
+                b.append(A[i])
+            else:
+               # print("here  c_sum and f_sum" )
+                #print(f_sum,c_sum)
+                if(c_sum>f_sum):
+                    ##f_sum=c_sum
+                    c_sum=0
+                    final=i
+                    ans=b
+                    b=[]
+                    initial=i+1
+                  #  print(ans,b)
+                if(c_sum==f_sum):
+                    if(len(ans)>=len(b)):
+                        ans=ans
+                    else:
+                        
+                        ans=b
+                        b=[]
+                    if
+        
+        return ans
+                    
+                    
+               
+           
+           
+                
+                
+       
+        
+        
