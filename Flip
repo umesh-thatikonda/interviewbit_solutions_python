@@ -1,0 +1,32 @@
+class Solution:
+    # @param A : string
+    # @return a list of integers
+    def flip(self, A):
+        
+       # A=list(A.split())
+        a=[]
+        for i in A:
+            a.append(i)
+           
+        A=a  
+        print(A)
+        sum=0
+        ans=0
+        initial=0
+        l=[0,0]
+        for i in range(len(A)):
+            
+            if A[i]=='1':
+                sum-=1
+            else:
+                sum+=1
+            if(sum<0):
+                sum=0
+                initial=i+1
+            if(ans<sum):
+                l=[initial+1,i+1]
+                ans=sum
+        return l
+                
+            
+                
